@@ -6,4 +6,13 @@ Array.prototype.insert = function (index, item) {
 // var arrayTest = [ 'A', 'B', 'D', 'E' ];
 // arrayTest.insert(2, 'C');
 
+
+//to use make sure jquery is included and do the following:
+//$.urlParam('urlVariablename')
+$.urlParam = function(name){
+	var results = new RegExp('[\?&]' + name + '=([^&#]*)').exec(window.location.href);
+	return results[1] || 0;
+}
+
+
 module.exports = Array;
