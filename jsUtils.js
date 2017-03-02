@@ -14,5 +14,13 @@ $.urlParam = function(name){
 	return results[1] || 0;
 }
 
+String.prototype.withCommas() {
+	var fullString = '';
+	for(var i = 0; i < this.length; i++) {
+		fullString += this[i];
+	}
+	return fullString.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
+}
 
 module.exports = Array;
+module.exports = String;
