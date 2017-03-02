@@ -14,7 +14,7 @@ $.urlParam = function(name){
 	return results[1] || 0;
 }
 
-String.prototype.withCommas() {
+String.prototype.withCommas = function() {
 	var fullString = '';
 	for(var i = 0; i < this.length; i++) {
 		fullString += this[i];
