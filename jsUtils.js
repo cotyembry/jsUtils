@@ -22,5 +22,16 @@ String.prototype.withCommas = function() {
 	return fullString.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
 }
 
+Date.prototype.mmddyyyy = function(separator) {							//jce added function prototype 3160715
+	var year = this.getFullYear();
+	var month = this.getMonth() + 1;
+	if(month.toString().length === 1) month = '0' + month;
+	var day = this.getDate();
+	if(day.toString().length === 1) day = '0' + day;
+	var returnVal =  month + separator + day + separator + year;    
+	return returnVal;
+}
+
 module.exports = Array;
+module.exports = Date;
 module.exports = String;
