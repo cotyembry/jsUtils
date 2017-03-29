@@ -1,3 +1,18 @@
+var jsUtil = {
+  //hasHorizontalBar will return true or false depending on the answer
+  hasHorizontalBar: function() {
+	//this checks the element to see if a scrollbar is present
+	var hasVerticalScrollbar = DOMElementToCheck.scrollHeight > DOMElementToCheck.clientHeight;
+	return hasVerticalScrollbar;
+  },
+  //hasVerticleBar will return true or false depending on the answer
+  hasVerticleBar: function(DOMElementToCheck) {
+	//this checks the element to see if a scrollbar is present
+	var hasHorizontalScrollbar = DOMElementToCheck.scrollWidth > DOMElementToCheck.clientWidth;
+	return hasHorizontalScrollbar;
+  }
+}
+
 //Just add the code to be able to inherit here, and import the variable in the code to use and bam, there it is
 Array.prototype.insert = function (index, item) {
   this.splice(index, 0, item);
@@ -35,3 +50,4 @@ Date.prototype.mmddyyyy = function(separator) {							//jce added function proto
 module.exports = Array;
 module.exports = Date;
 module.exports = String;
+module.exports = jsUtil;
