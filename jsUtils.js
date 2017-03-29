@@ -1,5 +1,5 @@
 var jsUtil = {
-  getScrollBarWidth: function() {
+  getScrollbarWidth: function() {
 	var inner = document.createElement('p');
 	inner.style.width = '100%';
 	inner.style.height = '200px';
