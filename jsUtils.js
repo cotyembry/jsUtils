@@ -29,7 +29,7 @@ var jsUtil = {
 	return hasVerticalScrollbar;
   },
   //hasVerticleBar will return true or false depending on the answer
-  hasVerticleBar: function(DOMElementToCheck) {
+  hasVerticalBar: function(DOMElementToCheck) {
 	//this checks the element to see if a scrollbar is present
 	var hasHorizontalScrollbar = DOMElementToCheck.scrollWidth > DOMElementToCheck.clientWidth;
 	return hasHorizontalScrollbar;
