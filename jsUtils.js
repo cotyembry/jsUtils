@@ -33,6 +33,14 @@ var jsUtil = {
 	//this checks the element to see if a scrollbar is present
 	var hasHorizontalScrollbar = DOMElementToCheck.scrollWidth > DOMElementToCheck.clientWidth;
 	return hasHorizontalScrollbar;
+  },
+  noSelectStyle: {
+    WebkitTouchCallout: 'none', // iOS Safari
+    WebkitUserSelect: 'none', // Safari
+    KhtmlUserSelect: 'none', // Konqueror HTML
+    MozUserSelect: 'none', // Firefox
+    MsUserSelect: 'none', // Internet Explorer/Edge
+    userSelect: 'none' // Non-prefixed version, currently supported by Chrome and Opera	  
   }
 }
 
