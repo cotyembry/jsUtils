@@ -36,11 +36,11 @@ var jsUtil = {
   },
   noSelectStyle: {
     WebkitTouchCallout: 'none', // iOS Safari
-    WebkitUserSelect: 'none', // Safari
-    KhtmlUserSelect: 'none', // Konqueror HTML
-    MozUserSelect: 'none', // Firefox
-    MsUserSelect: 'none', // Internet Explorer/Edge
-    userSelect: 'none' // Non-prefixed version, currently supported by Chrome and Opera	  
+    WebkitUserSelect: 'none',  // Safari
+    KhtmlUserSelect: 'none',  // Konqueror HTML
+    MozUserSelect: 'none',   // Firefox
+    MsUserSelect: 'none',   // Internet Explorer/Edge
+    userSelect: 'none'     // Non-prefixed version, currently supported by Chrome and Opera	  
   }
 }
 
