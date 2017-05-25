@@ -41,7 +41,15 @@ var jsUtil = {
     MozUserSelect: 'none',   // Firefox
     MsUserSelect: 'none',   // Internet Explorer/Edge
     userSelect: 'none'     // Non-prefixed version, currently supported by Chrome and Opera	  
-  }
+  },
+  writeToFile: function() {	//this is to be ran on node.js
+    var fs = require('fs');
+    fs.writeFile("/tmp/test", "Hey there!", function(err) {
+      if(err) {
+        return console.log(err);
+      }
+      console.log("The file was saved!");
+    });
 }
 
 
