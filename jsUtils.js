@@ -50,6 +50,14 @@ var jsUtil = {
       }
       console.log("The file was saved!");
     });
+  },
+  getScriptTagQueryString(idToSearchFor) {
+    var scripts = document.getElementById(idToSearchFor),
+        index = scripts.length - 1,
+        myScript = scripts[index],
+        //myScript now contains our script object
+        queryString = myScript.src.replace(/^[^\?]+\??/,'');	  
+  }
 }
 
 
