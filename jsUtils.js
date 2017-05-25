@@ -51,12 +51,30 @@ var jsUtil = {
       console.log("The file was saved!");
     });
   },
-  getScriptTagQueryString(idToSearchFor) {
+  getScriptTagQueryString(idToSearchFor, paramToLookFor) {	//both parameters are strings
     var scripts = document.getElementById(idToSearchFor),
         index = scripts.length - 1,
         myScript = scripts[index],
         //myScript now contains our script object
-        queryString = myScript.src.replace(/^[^\?]+\??/,'');	  
+        queryString = myScript.src.replace(/^[^\?]+\??/,'');
+	  
+    var script = document.getElementById('jsBundleId'),
+        queryString = script.src.replace(/^[^\?]+\??/,''),
+        keyValues = queryString.split('='),
+	foundKeyFlag = false,
+	paramValue = '',
+	//paramToLookFor = 'noWarning',
+	urlRegexHelper = new RegExp(paramToLookFor, ['ig']);
+    keyValues.forEach(function(value, i) {
+	if(foundKeyFlag === true) {
+		paramValue = value;	
+	}
+	if(value.search(urlRegexHelper) !== -1) {
+		foundKeyFlag = true;
+	}
+    });
+    //now `paramValue` is set to the value of the key passed (i.e. `paramToLookFor`)
+    return paramValue;
   }
 }
 
