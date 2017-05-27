@@ -75,6 +75,21 @@ var jsUtil = {
     });
     //now `paramValue` is set to the value of the key passed (i.e. `paramToLookFor`)
     return paramValue;
+  },
+  doOCR: function () {	//this function would be executed in the context of a Google App Script (see script.google.com for more)
+
+    var image = UrlFetchApp.fetch('https://img.labnol.org/logo.png').getBlob();
+
+    var file = {
+      title: 'OCR File',
+      mimeType: 'image/png'
+    };
+
+    // OCR is supported for PDF and image formats
+    file = Drive.Files.insert(file, image, {ocr: true});
+
+    // Print the Google Document URL in the console
+    Logger.log("File URL: %s", file.embedLink);
   }
 }
 
