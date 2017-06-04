@@ -42,6 +42,15 @@ var jsUtil = {
     MsUserSelect: 'none',   // Internet Explorer/Edge
     userSelect: 'none'     // Non-prefixed version, currently supported by Chrome and Opera	  
   },
+  /*
+     //I think this is the equivalent in css
+	-webkit-touch-callout: none; /* iOS Safari* /
+	-webkit-user-select: none;  /* Safari* /
+	-khtml-user-select: none;  /* Konqueror HTML* /
+	-moz-user-select: none;   /* Firefox* /
+	-ms-user-select: none;   /* Internet Explorer/Edge* /
+	user-select: none;      /* Non-prefixed version, currently supported by Chrome and Opera	  * /  
+  */
   writeToFile: function() {	//this is to be ran on node.js
     var fs = require('fs');
     fs.writeFile("/tmp/test", "Hey there!", function(err) {
