@@ -147,6 +147,21 @@ Date.prototype.mmddyyyy = function(separator) {							//jce added function proto
 	return returnVal;
 }
 
+
+/*
+move bundle to test
+var gulp = require('gulp');
+
+// var filesArray = ['./fileOne.js'];
+
+gulp.task('default', function() {
+  	gulp.src('.\\bundle.js')
+    .pipe(gulp.dest('Y:\\marsjs\\js\\build\\distribute\\bundle.js'));
+    // .pipe(gulp.dest('Y:\\marsjs\\js\\build\\distribute\\bundle.js'));
+});
+
+*/
+
 module.exports = Array;
 module.exports = Date;
 module.exports = String;
