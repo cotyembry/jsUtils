@@ -162,6 +162,20 @@ gulp.task('default', function() {
 
 */
 
+/*
+react prop-types help:
+
+HoverDiv.propTypes = {
+	columns: React.PropTypes.array,
+	selectors: React.PropTypes.array,
+	table: React.PropTypes.object
+}
+
+
+*/
+
+
+
 module.exports = Array;
 module.exports = Date;
 module.exports = String;
