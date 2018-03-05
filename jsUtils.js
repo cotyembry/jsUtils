@@ -1,3 +1,6 @@
+//convert css to react css:
+//https://staxmanade.com/CssToReact/
+
 var jsUtil = {
   getScrollbarWidth: function() {
 	var inner = document.createElement('p');
