@@ -63,6 +63,20 @@ var jsUtil = {
       console.log("The file was saved!");
     });
   },
+  readFile: function() {
+	fs.readFile(`./fileToRead`, 'utf8', function (err, data) {									//go get the dynamic entry keys to use from ./build/<currentBranchName>/filesToDistribute.txt to create the `dynamicEntry` object to be used during the compilation by webpack
+	  if (err) {
+	      return console.log(err);
+	  }
+	  let keysToUse = data.split('\n').map(e => e.search(/\.map/gi) !== -1 ? '' : e.replace(/\r/gi, ''));		//for some reason I was getting a \r character thing in the string for the line in the file after splitting the string on the \n newline character in windows
+	  for (let i = 0; i < keysToUse.length; i++) {
+	      if (keysToUse[i] === '') {
+	        keysToUse.splice(i, 1);																			//remove the current index from the array
+	      }
+	  }
+	  dynamicEntryKeysFromFile = keysToUse;
+	});
+  },
   getScriptTagQueryString(idToSearchFor, paramToLookFor) {	//both parameters are strings
     var scripts = document.getElementById(idToSearchFor),
         index = scripts.length - 1,
